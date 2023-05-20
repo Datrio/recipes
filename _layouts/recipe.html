@@ -3,30 +3,22 @@ layout: default
 ---
 <div class="container" itemscope itemtype="http://schema.org/Recipe">
 
-<!-- call up the image and image credit link -->
-  {% for image in page.image %}
-  <div class="xs-p2">
-    <img itemprop="image" src="{{site.baseurl}}/images/{{ image }}" />
-    {% if page.imagecredit %}
-      {% for imagecredit in page.imagecredit %}
-        <a href="{{ imagecredit }}" class="right">
-          <svg class="js-geomicon geomicon" width="14" height="14" data-icon="camera" viewBox="0 0 32 32" style="fill:currentcolor"><title>camera icon</title><path d="M0 6 L8 6 L10 2 L22 2 L24 6 L32 6 L32 28 L0 28 z M9 17 A7 7 0 0 0 23 17 A7 7 0 0 0 9 17"></path></svg>
-        </a>
-      {% endfor %}
-    {% endif %}
-  </div>
-  {% endfor %}
-
-<article class="post-content px2">
-
-<!-- call up the main recipe title and content -->
-  <header class="post-header">
+  <header>
     <h1 class="post-title center m1 sm-mt3" itemprop="name">{{ page.title }}</h1>
   </header>
 
-  <div class="px2 mt3 clearfix">
-    <div class="sm-col-8 mx-auto" itemprop="description">{{page.content}}</div>
+<!-- call up the image and image credit link -->
+  <div class="image-container">
+    <img itemprop="image" src="{{site.baseurl}}/images/{{ page.image }}" />
+
+    <figcaption>
+      <div class="px2 mt3">
+        <div class="sm-col-8 mx-auto" itemprop="description">{{page.content}}</div>
+      </div>
+    </figcaption>
   </div>
+
+<article class="post-content px2">
 
   <div class="mt3 clearfix">
     <div class="sm-col sm-col-12 lg-col-12">
@@ -51,23 +43,18 @@ layout: default
 
       {% if page.ingredients %}
       <h4 class="blue mt0 mb2 xs-center">{{ site.translation[site.language].ingredients }}</h4>
-      <ul itemprop="ingredients">
-        <!-- list ingredients that make up recipe -->
-        {% for ingredient in page.ingredients %}
-        <li itemprop="recipeIngredient">{{ ingredient | markdownify }}</li>
-        {% endfor %}
-      </ul>
+
+      {{ page.ingredients | markdownify | replace: '<ul>', '<ul itemprop="ingredients">' | replace: '<li>', '<li itemprop="recipeIngredient">' }}
+
       {% endif %}
 
     </div>
 
     <div class="sm-col sm-col-6 lg-col-6">
       <h4 class="blue mt0 mb2 xs-center">{{ site.translation[site.language].directions }}</h4>
-      <ul itemprop="recipeInstructions">
-        {% for direction in page.directions %}
-        <li>{{ direction | markdownify }}</li>
-        {% endfor %}
-      </ul>
+      <div itemprop="recipeInstructions">
+        {{ page.directions | markdownify }}
+      </div>
     </div>
 
   </div>
@@ -126,6 +113,8 @@ layout: default
   {% for category in page.categories %}
     <p class="clearfix">{{ site.translation[site.language].category }}: <span itemprop="recipeCategory">{{ category }}</span></p>
   {% endfor %}
+
+  <img class="clearfix runner" itemprop="image" src="{{site.baseurl}}/images/{{ page.image_bottom }}" />
 
   </article>
 

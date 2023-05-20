@@ -4,8 +4,8 @@
 
 img{width:100%;}
 .no-line-height{line-height:0;}
-ul{margin:0; padding:0; list-style:none;}
-ul li{  padding:0 0 0 25px; position:relative;}
+ul{margin:0 0 12px; padding:0; list-style:none;}
+ul li{  padding:0 0 8px 25px; position:relative;}
 ul li input{position: absolute; top:5px; left:0; opacity:0.5;}
 
 .bg-blue-tile{background: #007FFF url(../assets/tile.png); position:relative;}
@@ -51,3 +51,15 @@ a:hover .image{opacity:0.2;}
 .border-1 { border-width: 1px; }
 .border-1:active { border-width: 1px; }
 .capitalize { text-transform: capitalize; }
+
+body { background: #f1f1ef }
+.image-container { width: 140%; margin-left: 12.5% }
+.image-container img { width: 40%; display: inline-block }
+.image-container figcaption { width: 25%; display: inline-block; background: white; margin-left: -12.5% }
+
+h1.m1 { font-size: calc((3.8 - 1) * 1.2vw + 1rem); font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif; font-weight: normal; line-height: 1.5; margin-bottom: 2rem }
+
+img.runner { margin-top: 2rem; }
+
+.recipes a span { display: block }
+.recipes a span.title { right: 0; font-size: 2rem; background: rgba(0, 0, 0, 0.2) }
