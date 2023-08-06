@@ -2,6 +2,9 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap');
+
+
 img{width:100%;}
 .no-line-height{line-height:0;}
 ul{margin:0 0 12px; padding:0; list-style:none;}
@@ -63,3 +66,5 @@ img.runner { margin-top: 2rem; }
 
 .recipes a span { display: block }
 .recipes a span.title { right: 0; font-size: 2rem; background: rgba(0, 0, 0, 0.2) }
+
+h1.post-title { font-family: 'IM Fell DW Pica', serif; }
