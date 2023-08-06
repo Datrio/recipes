@@ -6,12 +6,11 @@ layout: default
 
   <div class="recipes xs-px1 xs-mt2">
     <div class="clearfix">
-    {% assign sorted = site.recipes | sort:"date" %}
+    {% assign sorted = site.recipes | sort: "date" | reverse %}
     {% for post in sorted %}
-
       <div class="sm-col sm-col-6 md-col-6 lg-col-4 xs-px1 xs-mb2">
           <a class="block relative bg-blue" href="{{ post.url | prepend: site.baseurl }}">
-            <span class="image ratio bg-cover" style="background-image:url({{site.baseurl}}/images/{{ post.image }});"></span>
+            <span class="image ratio bg-cover" style="background-image:url({{ post.url | replace: 'index.html', 'image-1.jpeg' }});"></span>
             <span class="title p2 m0 absolute bold white bottom-0 left-0">{{ post.title }}</span>
           </a>
       </div>

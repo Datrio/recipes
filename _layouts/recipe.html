@@ -9,7 +9,7 @@ layout: default
 
 <!-- call up the image and image credit link -->
   <div class="image-container">
-    <img itemprop="image" src="{{site.baseurl}}/images/{{ page.image }}" />
+    <img itemprop="image" src="./image-1.jpeg" />
 
     <figcaption>
       <div class="px2 mt3">
@@ -60,61 +60,11 @@ layout: default
   </div>
 <!-- end recipe and directions -->
 
-<!-- check if it's a component-based recipe, render it -->
-  {% if page.components %}
-
-  <div class="components bg-darken-2 p2 mt3 mb3 center">
-    &darr; {{ site.translation[site.language].component_based }} &darr;
-  </div>
-
-  <div class="clearfix mxn2">
-  {% for component in page.components %}
-    <div class="sm-col sm-col-4 px2">
-    {% for recipe in site.components %}
-    {% if recipe.title == component %}
-      <h4 class="blue center">{{recipe.title}}</h4>
-
-      {% for image in recipe.image %}
-      <div class="image ratio bg-cover" style="background-image:url({{site.baseurl}}/images/{{ image }});">
-        <img class="hide" itemprop="photo" src="{{site.baseurl}}/images/{{ image }}" />
-      </div>
-        {% if recipe.imagecredit %}
-          {% for imagecredit in recipe.imagecredit %}
-            <a href="{{ imagecredit }}" class="right">
-              <svg class="js-geomicon geomicon" width="14" height="14" data-icon="camera" viewBox="0 0 32 32" style="fill:currentcolor"><title>camera icon</title><path d="M0 6 L8 6 L10 2 L22 2 L24 6 L32 6 L32 28 L0 28 z M9 17 A7 7 0 0 0 23 17 A7 7 0 0 0 9 17"></path></svg>
-            </a>
-          {% endfor %}
-        {% endif %}
-      {% endfor %}
-
-      <h4 class="blue regular xs-center">{{ site.translation[site.language].ingredients }}</h4>
-        <ul class="ingredients" itemprop="ingredients">
-        {% for item in recipe.ingredients %}
-        <li itemprop="ingredient">{{ item | markdownify }}</li>
-        {% endfor %}
-      </ul>
-
-      <h4 class="blue regular xs-center">{{ site.translation[site.language].directions }}</h4>
-        <ul itemprop="instructions">
-        {% for item in recipe.directions %}
-        <li>{{ item | markdownify }}</li>
-        {% endfor %}
-      </ul>
-
-    {% endif %}
-    {% endfor %}
-    </div>
-  {% endfor %}
-  </div>
-
-  {% endif %}
-<!-- end components -->
-
   {% for category in page.categories %}
     <p class="clearfix">{{ site.translation[site.language].category }}: <span itemprop="recipeCategory">{{ category }}</span></p>
   {% endfor %}
 
-  <img class="clearfix runner" itemprop="image" src="{{site.baseurl}}/images/{{ page.image_bottom }}" />
+  <img class="clearfix runner" itemprop="image" src="./image-2.jpeg" />
 
   </article>
 

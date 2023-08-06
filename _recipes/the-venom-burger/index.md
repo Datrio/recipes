@@ -2,8 +2,6 @@
 
 layout: recipe
 title:  "The “Venom” Burger"
-image: the-venom-burger-1.jpeg
-image_bottom: the-venom-burger-2.jpeg
 date: 2020-03-25
 tags: burger, onions, bacon
 
