@@ -48,7 +48,7 @@ a:hover .image{opacity:0.2;}
 .xs-center{text-align: center}
 .site-title{bottom:-28px; top:auto; left:50%; margin-left:-25px; border-radius:200px; transition:.2s ease bottom}
 .site-title:hover{bottom:-14px;}
-.recipes .sm-col{border-bottom:3px solid white}
+.recipes .sm-col{border-bottom:3px solid white; }
 }
 
 .border-1 { border-width: 1px; }
@@ -65,6 +65,8 @@ h1.m1 { font-size: calc((3.8 - 1) * 1.2vw + 1rem); font-family: "proxima-nova","
 img.runner { margin-top: 2rem; }
 
 .recipes a span { display: block }
-.recipes a span.title { right: 0; font-size: 2rem; background: rgba(0, 0, 0, 0.2) }
+.recipes a span.title { right: 0; font-size: 1.5rem; background: rgba(0, 0, 0, 0.2) }
 
 h1.post-title { font-family: 'IM Fell DW Pica', serif; }
+
+.post-content .sm-col { padding-right: 2rem; }
