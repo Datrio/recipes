@@ -2,7 +2,7 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=IM+Fell+DW+Pica&display=swap');
 
 
 img{width:100%;}
@@ -38,24 +38,13 @@ a:hover .image{opacity:0.2;}
 
 .ratio{padding-top:50%; background-position: center center; background-repeat:no-repeat;}
 
-@media all and (max-width:40em){
-.left-align{text-align:center;}
-.right-align{text-align:center;}
-}
-
-@media all and (max-width: 300px){
-.title{font-size:1.3rem; text-align:center; box-sizing:border-box; width:100%;}
-.xs-center{text-align: center}
-.site-title{bottom:-28px; top:auto; left:50%; margin-left:-25px; border-radius:200px; transition:.2s ease bottom}
-.site-title:hover{bottom:-14px;}
-.recipes .sm-col{border-bottom:3px solid white; }
-}
 
 .border-1 { border-width: 1px; }
 .border-1:active { border-width: 1px; }
 .capitalize { text-transform: capitalize; }
 
-body { background: #f1f1ef }
+body { background: #f1f1ef; font-family: 'Cabin Sketch', sans-serif; }
+h4 { font-family: 'Cabin Sketch', sans-serif; }
 .image-container { width: 140%; margin-left: 12.5% }
 .image-container img { width: 40%; display: inline-block }
 .image-container figcaption { width: 25%; display: inline-block; background: white; margin-left: -12.5% }
@@ -70,3 +59,24 @@ img.runner { margin-top: 2rem; }
 h1.post-title { font-family: 'IM Fell DW Pica', serif; }
 
 .post-content .sm-col { padding-right: 2rem; }
+
+.site-title img { width: 56px; height: 56px }
+
+@media all and (max-width:40em){
+.left-align{text-align:center;}
+.right-align{text-align:center;}
+}
+
+@media all and (max-width: 300px){
+.title{font-size:1.3rem; text-align:center; box-sizing:border-box; width:100%;}
+.xs-center{text-align: center}
+.site-title{bottom:-28px; top:auto; left:50%; margin-left:-25px; border-radius:200px; transition:.2s ease bottom}
+.site-title:hover{bottom:-14px;}
+.recipes .sm-col{border-bottom:3px solid white; }
+}
+
+@media all and (max-width:40em) {
+.image-container{ width: auto; margin-left: 0; padding: 0 1rem}
+.image-container img { width: 100%; display: block; }
+.image-container figcaption { width: auto; margin-left: 0; }
+}
