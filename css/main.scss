@@ -51,7 +51,7 @@ h4 { font-family: 'Cabin Sketch', sans-serif; }
 
 h1.m1 { font-size: calc((3.8 - 1) * 1.2vw + 1rem); font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif; font-weight: normal; line-height: 1.5; margin-bottom: 2rem }
 
-img.runner { margin-top: 2rem; }
+img.runner { max-width: 500px; margin: 2rem auto 0; display: block; }
 
 .recipes a span { display: block }
 .recipes a span.title { right: 0; font-size: 1.5rem; background: rgba(0, 0, 0, 0.2) }
